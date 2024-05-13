@@ -1,0 +1,11 @@
+<h2>Обработка ошибок и повтор запроса</h2>
+<p>У вас есть поток данных, представленный Observable, который делает HTTP-запрос (ajax). Напишите цепочку операторов RxJS, которая будет обрабатывать ошибки запроса и автоматически повторять запрос определенное количество раз.</p>
+
+<hr>
+
+<h3><em>See console to view results</em></h3>
+
+<div>
+  <button [disabled]="goodSubscription" (click)="goodRequest()">Good request</button>
+  <button [disabled]="badSubscription" (click)="badRequest()">Bad request</button>
+</div>
