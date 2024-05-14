@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="username">{{ username }}</div>
+  <ul class="users">
+    <li *ngFor="let userStats$ of usersActivity$ | async">
+      User-{{ (userStats$ | async)?.id }} {{ (userStats$ | async)?.active }}
+    </li>
+  </ul>
+  <textarea #chattextinput></textarea>
+</div>
