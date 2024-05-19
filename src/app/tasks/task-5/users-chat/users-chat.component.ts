@@ -1,6 +1,6 @@
 import { OnInit, AfterViewInit, Component, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { UsersChatService } from './users-chat.service';
-import { Observable, fromEvent } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-users-chat',
