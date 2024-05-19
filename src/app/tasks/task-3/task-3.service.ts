@@ -13,7 +13,7 @@ export class Task3Service {
       return this.data$;
     } else {
       return this.data$ = ajax('https://jsonplaceholder.typicode.com/posts/1').pipe(
-        shareReplay()
+        shareReplay()  // Расшарить последний результат между всеми подписчиками (старыми и новыми)
       );
     }
   }

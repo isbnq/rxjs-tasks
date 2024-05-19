@@ -1,9 +1,16 @@
 <div class="container">
   <div class="username">{{ username }}</div>
+
   <ul class="users">
-    <li *ngFor="let userStats$ of usersActivity$ | async">
-      User-{{ (userStats$ | async)?.id }} {{ (userStats$ | async)?.active }}
+    <li
+      *ngFor="let user of usersActivity$ | async"
+      class="user-activity"
+      [ngClass]="(user.activity$ | async) ? 'active' : 'inactive'"
+    >
+      User-{{ user.id }}
     </li>
   </ul>
-  <textarea #chattextinput></textarea>
+
+  <textarea #chattextinput class="chat-textinput"></textarea>
+
 </div>

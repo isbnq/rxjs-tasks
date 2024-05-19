@@ -8,5 +8,19 @@ import { Task5Service } from './task-5.service';
   providers: [Task5Service]
 })
 export class Task5Component {
+  chatsCount: number = 0
 
+  addChat() {
+    this.chatsCount += 1;
+  }
+
+  delChat() {
+    if (this.chatsCount) {
+      this.chatsCount -= 1;
+    }
+  }
+
+  getChatsCount() {
+    return new Array(this.chatsCount);
+  }
 } 

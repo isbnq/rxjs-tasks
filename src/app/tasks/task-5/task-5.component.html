@@ -4,10 +4,11 @@
 
 <hr>
 
-<h3><em>See console to view results</em></h3>
-
 <div>
-  <app-users-chat></app-users-chat>
-  <app-users-chat></app-users-chat>
-  <app-users-chat></app-users-chat>
+  <button (click)="addChat()">Add chat</button>
+  <button (click)="delChat()">Delete chat</button>
+</div>
+
+<div class="users-chats">
+  <app-users-chat *ngFor="let _ of getChatsCount()"></app-users-chat>
 </div>

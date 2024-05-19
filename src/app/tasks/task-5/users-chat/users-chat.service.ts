@@ -1,12 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Task5Service } from '../task-5.service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersChatService implements OnDestroy {
-  private userId: number
+  private userId!: number
 
   constructor(private server: Task5Service) {
     this.userId = this.server.addUser();
@@ -25,6 +25,8 @@ export class UsersChatService implements OnDestroy {
   }
 
   getUsersActivity() {
-    return this.server.getUsersActivity();
+    return this.server.getUsersActivity().pipe(
+      map(list => list.filter(v => v.id !== this.userId))
+    );
   }
 }

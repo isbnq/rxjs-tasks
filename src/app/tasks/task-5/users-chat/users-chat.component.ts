@@ -1,6 +1,6 @@
 import { OnInit, AfterViewInit, Component, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { UsersChatService } from './users-chat.service';
-import { BehaviorSubject, Observable, fromEvent } from 'rxjs';
+import { Observable, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-users-chat',
@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable, fromEvent } from 'rxjs';
 })
 export class UsersChatComponent implements OnInit, AfterViewInit, OnDestroy {
   username!: string
-  usersActivity$!: Observable<Observable<{ id: number, active: boolean }>[]>
+  usersActivity$!: ReturnType<UsersChatService['getUsersActivity']>
 
   @ViewChild('chattextinput') chattextinput!: ElementRef
   
